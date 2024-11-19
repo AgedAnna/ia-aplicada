@@ -1,4 +1,5 @@
 import About from "./about/About";
+import Group from "./group/Group";
 import Header from "./header/Header";
 import Ia from "./ia/Ia";
 
@@ -12,13 +13,9 @@ const LandingPage: React.FC = () => {
       <section id="proposta">
         <About />
       </section>
-      {/* <section id="clients">
-        <Clientes />
+      <section id="equipe">
+        <Group />
       </section>
-      <section id="contact">
-        <Contact />
-      </section>  
-      <FooterPage /> */}
     </>
   );
 };

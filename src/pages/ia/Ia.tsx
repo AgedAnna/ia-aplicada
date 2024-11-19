@@ -5,6 +5,7 @@ import { message, Row, Upload, UploadFile } from "antd";
 import type { RcFile, UploadProps } from "antd/es/upload/interface";
 import ImgCrop from "antd-img-crop";
 import { uploadFile } from "../../services/Ia";
+import { translateText } from "../../services/translation";
 
 const { Dragger } = Upload;
 
@@ -13,11 +14,17 @@ const Ia: React.FC = () => {
   const [fileList, setFileList] = useState<UploadFile[]>([]);
 
   const handleUpload = async (file: RcFile): Promise<void> => {
-    console.log("Arquivo para upload:", file);
     try {
       message.loading("Enviando arquivo...", 0);
       const result = await uploadFile(file);
-      setDescription(result.generated_text);
+      const englishDescription = result.generated_text;
+
+      const portugueseDescription = await translateText(
+        englishDescription,
+        "pt"
+      );
+
+      setDescription(portugueseDescription);
       message.destroy();
       message.success("Arquivo enviado com sucesso!");
     } catch (error: any) {
@@ -27,7 +34,6 @@ const Ia: React.FC = () => {
   };
 
   const beforeUpload = async (file: RcFile) => {
-    console.log("Arquivo cortado recebido em beforeUpload:", file);
     await handleUpload(file);
     setFileList([]);
     return false;

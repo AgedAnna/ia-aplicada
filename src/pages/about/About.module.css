@@ -25,6 +25,9 @@
   flex: 1 1 50%;
   padding: 10px;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .title {
