@@ -1,0 +1,44 @@
+.inicioContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  background-image: url("../../assets/fundohome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #000;
+  text-align: left;
+  padding: 0 40px;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.previewContainer {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.previewImage {
+  max-width: 100%;
+  height: auto;
+}
+
+.result {
+  padding: 20px;
+
+  border-radius: 10px;
+
+  background-color: #ffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.description {
+  margin-top: 10px;
+
+  align-items: center;
+  text-align: center;
+
+  font-weight: 400;
+  font-family: "Jost", sans-serif !important;
+}
